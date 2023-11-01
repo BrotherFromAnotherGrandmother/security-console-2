@@ -1,4 +1,5 @@
 from django.utils.timezone import localtime
+from datetime import timedelta
 
 from django.db import models
 
@@ -39,15 +40,16 @@ class Visit(models.Model):
         return duration
 
     def is_long(self, minutes=60):
-        minutes *= 60
+        minutes = timedelta(minutes=minutes)
         if self.leaved_at:
             delta = localtime(self.leaved_at) - localtime(self.entered_at)
             return delta > minutes
         delta = localtime() - localtime(self.entered_at)
         return delta > minutes
 
+
 def is_suspect(self):
-    visits = Visit.object.all() # все визиты, возможно с неактивных пропусков тоже
+    visits = Visit.object.all()  # все визиты, возможно с неактивных пропусков тоже
     suspect_visits = []
     for visit in visits:
         if visit.is_long():

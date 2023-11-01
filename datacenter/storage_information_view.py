@@ -15,6 +15,7 @@ def storage_information_view(request):
             'who_entered': f'{visiter.passcard.owner_name}',
             'entered_at': f'{localtime(visiter.entered_at)}',
             'duration': f'{format_duration(visiter.duration)}',
+            'is_strange': f'{visiter.is_long()}',
         })
 
     context = {
