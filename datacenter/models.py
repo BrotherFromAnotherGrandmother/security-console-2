@@ -46,12 +46,3 @@ class Visit(models.Model):
             return delta > minutes
         delta = localtime() - localtime(self.entered_at)
         return delta > minutes
-
-
-def is_suspect(self):
-    visits = Visit.object.all()  # все визиты, возможно с неактивных пропусков тоже
-    suspect_visits = []
-    for visit in visits:
-        if visit.is_long():
-            suspect_visits.append(visit)
-    return suspect_visits

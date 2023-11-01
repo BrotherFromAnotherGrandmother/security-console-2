@@ -6,11 +6,11 @@ from django.shortcuts import render
 
 
 def storage_information_view(request):
-    visiters = Visit.objects.filter(leaved_at=None)  # кто сейчас находится в хранилище
+    visiters = Visit.objects.filter(leaved_at=None)
 
     non_closed_visits = []
     for visiter in visiters:
-        visiter.duration = visiter.get_duration()  # присвоили каждому visiters время нахождения в хранилище
+        visiter.duration = visiter.get_duration()
         non_closed_visits.append({
             'who_entered': f'{visiter.passcard.owner_name}',
             'entered_at': f'{localtime(visiter.entered_at)}',
@@ -19,7 +19,7 @@ def storage_information_view(request):
         })
 
     context = {
-        'non_closed_visits': non_closed_visits,  # не закрытые посещения
+        'non_closed_visits': non_closed_visits,
     }
     return render(request, 'storage_information.html', context)
 
