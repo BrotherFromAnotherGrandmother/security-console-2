@@ -24,10 +24,10 @@ def storage_information_view(request):
 
 
 def format_duration(duration):
-    '''Returnin duration in string format'''
+    '''Returning duration in string format'''
     total_sec = duration.total_seconds()
     days = total_sec // 86400
     hours = int((total_sec - days * 86400) // 3600)
     minutes = int((total_sec - days * 86400 - hours * 3600) // 60)
-    seconds = int(total_sec - days * 86400 - hours*3600 - minutes * 60)
+    seconds = int(total_sec - days * 86400 - hours * 3600 - minutes * 60)
     return f'{hours}:{minutes}:{seconds}'

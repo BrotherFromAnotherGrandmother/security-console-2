@@ -32,5 +32,24 @@ class Visit(models.Model):
         )
 
     def get_duration(self):
+        if self.leaved_at:
+            duration = localtime(self.leaved_at) - localtime(self.entered_at)
+            return duration
         duration = localtime() - localtime(self.entered_at)
         return duration
+
+    def is_long(self, minutes=60):
+        minutes *= 60
+        if self.leaved_at:
+            delta = localtime(self.leaved_at) - localtime(self.entered_at)
+            return delta > minutes
+        delta = localtime() - localtime(self.entered_at)
+        return delta > minutes
+
+def is_suspect(self):
+    visits = Visit.object.all() # все визиты, возможно с неактивных пропусков тоже
+    suspect_visits = []
+    for visit in visits:
+        if visit.is_long():
+            suspect_visits.append(visit)
+    return suspect_visits
