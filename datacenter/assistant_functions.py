@@ -1,11 +1,13 @@
+SECONDS_ON_DAY = 86400
+SECONDS_ON_HOUR = 3600
+SECONDS_ON_MINUTE = 60
+
+
 def format_duration(duration):
     '''Returning duration in string format'''
     total_sec = duration.total_seconds()
-    seconds_on_day = 86400
-    seconds_on_hours = 3600
-    seconds_on_minutes = 60
-    days = total_sec // seconds_on_day
-    hours = int((total_sec - days * seconds_on_day) // seconds_on_hours)
-    minutes = int((total_sec - days * seconds_on_day - hours * seconds_on_hours) // seconds_on_minutes)
-    seconds = int(total_sec - days * seconds_on_day - hours * seconds_on_hours - minutes * seconds_on_minutes)
+    days = total_sec // SECONDS_ON_DAY
+    hours = int((total_sec - days * SECONDS_ON_DAY) // SECONDS_ON_HOUR)
+    minutes = int((total_sec - days * SECONDS_ON_DAY - hours * SECONDS_ON_HOUR) // SECONDS_ON_MINUTE)
+    seconds = int(total_sec - days * SECONDS_ON_DAY - hours * SECONDS_ON_HOUR - minutes * SECONDS_ON_MINUTE)
     return f'{hours}:{minutes}:{seconds}'
