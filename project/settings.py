@@ -6,11 +6,11 @@ env.read_env()
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'HOST': env.str('HOST_DB'),
+        'HOST': env.str('DB_HOST'),
         'PORT': env.int('DB_PORT', default=5434),
-        'NAME': env.str('NAME_DB'),
-        'USER': env.str('USER_DB'),
-        'PASSWORD': env.str('PASSWORD_DB'),
+        'NAME': env.str('DB_NAME'),
+        'USER': env.str('USER_NAME'),
+        'PASSWORD': env.str('USER_PASSWORD'),
     }
 }
 
