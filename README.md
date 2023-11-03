@@ -36,6 +36,10 @@ source venv/bin/activate
 ```
 git clone https://github.com/BrotherFromAnotherGrandmother/security-console-2
 ```
+Перейдите в папку с requirements.txt
+```commandline
+cd security-console-2
+```
 Затем используйте `pip` (или `pip3`, есть конфликт с Python2) для установки зависимостей:
 ```
 pip install -r requirements.txt
