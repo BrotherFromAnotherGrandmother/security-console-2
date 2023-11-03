@@ -51,7 +51,7 @@ touch .env
 Определите в нём переменные среды следующим образом:
 
 DEBUG=```True``` or ```False```  
-DB_HOST = название вашего БД хоста 
+DB_HOST = название вашего БД хоста  
 USER_NAME = имя пользователя для подключения к БД  
 USER_PASSWORD = пароль пользователя    
 DB_NAME = имя БД к которой мы хотим подключиться на сервере баз данных  
@@ -62,7 +62,7 @@ SECRET_KEY = Ваш секретный ключ
 python manage.py runserver 0.0.0.0:8000
 ```
 При успешном запуске откроется похожая страничка:  
-![successful deployment](successful deployment.png)
+<img width="1328" alt="successful_deployment" src="https://github.com/BrotherFromAnotherGrandmother/security-console-2/assets/101392966/7885932b-bd69-4478-af4f-cdd4a3f7e443">
 
 ### Цель проекта
 
