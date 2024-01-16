@@ -65,7 +65,3 @@ python manage.py runserver 0.0.0.0:8000
 ```
 При успешном запуске откроется похожая страничка:  
 <img width="1328" alt="successful_deployment" src="https://github.com/BrotherFromAnotherGrandmother/security-console-2/assets/101392966/7885932b-bd69-4478-af4f-cdd4a3f7e443">
-
-### Цель проекта
-
-Код написан в образовательных целях на онлайн-курсе для веб-разработчиков [dvmn.org](https://dvmn.org/).
